@@ -4,9 +4,9 @@ import { Badge } from "./ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card"
 import { Separator } from "./ui/separator"
 
-const MovieCard = ({ id, title, yearReleased, genre, runTime, plot, language, posterUrl }: MovieCardProps) => {
+const MovieCard = ({ title, yearReleased, genre, runTime, plot, language, posterUrl }: MovieCardProps) => {
     return (
-        <Card key={id}>
+        <Card>
             <div className="w-[450px]">
                 <AspectRatio ratio={16 / 9}>
                     <img src={posterUrl} alt="" className="rounded-md object-cover h-full w-full" />

@@ -54,7 +54,7 @@ export default function App() {
       <main>
         <div className="flex flex-wrap p-6 justify-center">
           {
-            MovieCardData.map(item => <MovieCard {...item} />)
+            MovieCardData.map((item) => <MovieCard {...item} key={item.id} />)
           }
         </div>
       </main>
