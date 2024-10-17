@@ -1,4 +1,6 @@
 import MovieCard from "./components/MovieCard";
+import Navbar from "./components/Navbar";
+import { Separator } from "./components/ui/separator";
 import { MovieCardProps } from "./types/MovieCardTypes";
 
 // TODO:
@@ -9,7 +11,7 @@ import { MovieCardProps } from "./types/MovieCardTypes";
 export default function App() {
   const MovieCardData: MovieCardProps[] = [
     {
-      id: 1,
+      id: 'tt1454468',
       title: "Gravity",
       yearReleased: 2013,
       genre: ["Drama, Sci-Fi", "Thriller"],
@@ -19,7 +21,7 @@ export default function App() {
       posterUrl: "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_SX300.jpg"
     },
     {
-      id: 2,
+      id: "2",
       title: "Gravity",
       yearReleased: 2013,
       genre: ["Drama, Sci-Fi", "Thriller"],
@@ -29,7 +31,7 @@ export default function App() {
       posterUrl: "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_SX300.jpg"
     },
     {
-      id: 3,
+      id: "3",
       title: "Gravity",
       yearReleased: 2013,
       genre: ["Drama, Sci-Fi", "Thriller"],
@@ -39,7 +41,7 @@ export default function App() {
       posterUrl: "https://m.media-amazon.com/images/M/MV5BNjE5MzYwMzYxMF5BMl5BanBnXkFtZTcwOTk4MTk0OQ@@._V1_SX300.jpg"
     },
     {
-      id: 4,
+      id: "4",
       title: "Gravity",
       yearReleased: 2013,
       genre: ["Drama, Sci-Fi", "Thriller"],
@@ -51,6 +53,8 @@ export default function App() {
   ]
   return (
     <>
+      <Navbar />
+      <Separator />
       <main>
         <div className="flex flex-wrap p-6 justify-center">
           {

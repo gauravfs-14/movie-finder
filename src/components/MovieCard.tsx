@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 import { MovieCardProps } from "../types/MovieCardTypes"
 import { AspectRatio } from "./ui/aspect-ratio"
 import { Badge } from "./ui/badge"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./ui/card"
 import { Separator } from "./ui/separator"
 
-const MovieCard = ({ title, yearReleased, genre, runTime, plot, language, posterUrl }: MovieCardProps) => {
+const MovieCard = ({ id, title, yearReleased, genre, runTime, plot, language, posterUrl }: MovieCardProps) => {
     return (
         <Card>
             <div className="w-[450px]">
@@ -14,9 +15,11 @@ const MovieCard = ({ title, yearReleased, genre, runTime, plot, language, poster
             </div>
             <CardHeader>
                 <CardTitle>
-                    <span className="text-2xl">
-                        {title}
-                    </span>
+                    <Link to={"/movie/" + id}>
+                        <span className="text-2xl">
+                            {title}
+                        </span>
+                    </Link>
                     {" ◆ "}
                     <span className="text-2xl">
                         {yearReleased}

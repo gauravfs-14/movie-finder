@@ -2,9 +2,25 @@ import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
-import Navbar from './components/Navbar';
-import { Separator } from './components/ui/separator';
 import { SearchContext } from './context/context';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import ErrorPage from './pages/ErrorPage';
+import MovieDetails from './pages/MovieDetails';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "movie/:id",
+    element: <MovieDetails />
+  }
+]);
 
 function Root() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,9 +28,7 @@ function Root() {
   return (
     <StrictMode>
       <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
-        <Navbar />
-        <Separator />
-        <App />
+        <RouterProvider router={router} />
       </SearchContext.Provider>
     </StrictMode>
   );
